@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+    h1 {
+        border-style: inset;
+        border-color: deepskyblue;
+    }
+    body {
+        background-color: orange;
+    }
+    
+</style>
+</head>
+<center>
+<body>
+<h1>Temperature Converter</h1>
+    <select required id="From">
+	<option value="s">-Select-</option>
+    <option value="f">Fahrenheit</option>
+    <option value="c">Celsius</option>
+    <option value="k">Kelvin</option>
+    </select> 
+    
+    <select required id="To">
+	<option value="s">-Select-</option>
+    <option value="f">Fahrenheit</option>
+    <option value="c">Celsius</option>
+    <option value="k">Kelvin</option>
+    </select>
+    <script>
+    function eraseText() {
+        document.getElementById("convertf").value = "";
+		document.getElementById("convertc").value="";
+		document.getElementById("covnertk").value="";
+    }
+        function myFunction() {
+
+                if(document.getElementById("temperature").value == "f") {
+
+                    var x = document.getElementById("fconvert").value;
+
+                    var convertFC = (x - 32) * 5/9;
+
+                    var convertFK = (x * 1 + 459.67) * 5/9;
+
+                    document.getElementById("cconvert").value = convertFC;
+
+                    document.getElementById("kconvert").value = convertFK;
+
+                    document.getElementById("p1").innerHTML = "Celsius";
+
+                    document.getElementById("p2").innerHTML = "Kelvin";
+
+                } else if(document.getElementById("temperature").value == "c") {
+
+                    var x = document.getElementById("fconvert").value;
+
+                    var convertCF = x * 9/5 + 32;
+
+                    var convertCK = x * 1 + 273.15;
+                    document.getElementById("cconvert").value = convertCF;
+
+                    document.getElementById("kconvert").value = convertCK;
+
+                    document.getElementById("p1").innerHTML = "Fahrenheit";
+
+                    document.getElementById("p2").innerHTML = "Kelvin";
+
+                } else {
+
+                    var x = document.getElementById("fconvert").value;
+
+                    var convertKF = x * 9/5 - 459.67;
+
+                    var convertKC = x - 273.15;
+                    document.getElementById("cconvert").value = convertKF;
+
+                    document.getElementById("kconvert").value = convertKC;
+
+                    document.getElementById("p1").innerHTML = "Fahrenheit";
+
+                    document.getElementById("p2").innerHTML = "Celsius";
+
+                }
+    </script>
+</body>
+    </center>
+    </html>
